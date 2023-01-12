@@ -1,0 +1,39 @@
+/*.title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+  
+  li a {
+    float: right;
+    display: block;
+    color: blue;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    color: #111;
+  }
+  .notes{
+    text-align: center;
+    font-size: large;
+  }*/
+  .mat-toolbar{
+    background-color: cornflowerblue;
+    color: white;
+  }
+  .mat-button{
+     color: white;
+  }
+  .space{
+    flex: 1 1 auto;
+  }

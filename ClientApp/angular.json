@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "my_notesapp": {
+    "Mocksapp": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,23 +13,22 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "progress": false,
-            "outputPath": "dist",
+            "outputPath": "dist/mocksapp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "allowedCommonJsDependencies": [
-              "oidc-client"
-            ],
             "assets": [
+              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/chart.js/dist/chart.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -72,11 +67,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "my_notesapp:build:production"
+              "browserTarget": "Mocksapp:build:production"
             },
             "development": {
-              "browserTarget": "my_notesapp:build:development",
-              "proxyConfig": "proxy.conf.js"
+              "browserTarget": "Mocksapp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +78,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "my_notesapp:build"
+            "browserTarget": "Mocksapp:build"
           }
         },
         "test": {
@@ -95,6 +89,7 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
+              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
@@ -102,35 +97,8 @@
             ],
             "scripts": []
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist-server",
-            "main": "src/main.ts",
-            "tsConfig": "tsconfig.server.json"
-          },
-          "configurations": {
-            "dev": {
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": true
-            },
-            "production": {
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false
-            }
-          }
         }
       }
     }
-  },
-  "defaultProject": "my_notesapp"
+  }
 }
