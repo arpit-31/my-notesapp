@@ -19,7 +19,7 @@ export class NoteserviceService {
   let obj = this.notes.find(x=> x.id == noteid);
   return obj;
   }
-  deleteemployee(id:number){
+  deletenotes(id:number){
    const i= this.notes.findIndex(e => e.id === id);
    if(i !== -1){
       this.notes.splice(i,1);

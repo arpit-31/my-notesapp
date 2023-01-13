@@ -15,6 +15,7 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler';
 import { MatCardModule } from '@angular/material/card';
 import {  MatInputModule } from '@angular/material/input';
 import { NoteserviceService } from './noteservice.service';
+import { SearchFilterPipe } from "./filter-search.pipe";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { NoteserviceService } from './noteservice.service';
     NavigationBarComponent,
     CreateComponent,
     HomeComponent,
+    SearchFilterPipe
    
    
   ],

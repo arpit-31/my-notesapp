@@ -15,8 +15,8 @@ export class HomeComponent implements OnInit  {
   ngOnInit(): void {
     this.notes = this.noteserviceService.getnotes();
   }
-   deleteemployee(id:any){
-     this.noteserviceService.deleteemployee(id);
+   deletenotes(id:any){
+     this.noteserviceService.deletenotes(id);
  }
   
  getedit(noteid:any){
