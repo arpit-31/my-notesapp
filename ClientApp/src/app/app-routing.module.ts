@@ -5,7 +5,8 @@ import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [{ path: 'create', component: CreateComponent},
 { path: 'home', component: HomeComponent},
-{path:'create/:noteid',component: CreateComponent}];
+{path:'create/:noteid',component: CreateComponent},
+{ path: '', redirectTo: 'home',pathMatch:'full'}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
