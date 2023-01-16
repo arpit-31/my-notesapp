@@ -28,3 +28,17 @@ form{
 margin-right: 1rem;
 margin-top: 1rem;
 }
+.submit:hover{
+    background-color:#ADD8E6 ;
+}
+.space {
+    text-align: center;
+    float:center;
+  background-color:rgb(201, 242, 251);
+  border-left: 4px solid;
+  border-right: 4px solid;
+  padding: 6px 12px;
+  Font-Size: 1.5rem;
+  font-weight: bold;
+}
+
