@@ -13,10 +13,16 @@ export class HomeComponent implements OnInit  {
  
   }
   ngOnInit(): void {
-    this.notes = this.noteserviceService.getnotes();
+  this.getnotes();
   }
    deletenotes(id:any){
-     this.noteserviceService.deletenotes(id);
+     this.noteserviceService.deletenotes(id).subscribe(a => this.getnotes());
+ }
+ getnotes(){
+  this.noteserviceService.getnotes().subscribe(result => {
+    this.notes = result;
+    this.noteserviceService.setnotes(this.notes);
+  });
  }
   
  getedit(noteid:any){
@@ -33,5 +39,5 @@ export class HomeComponent implements OnInit  {
     // return this.notes.splice(p => p.title==abc);
     // this.filterednotes=this.notes.filter(p => p.title==this.search)
   }
-  
+ 
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web.Http.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using NotesApp.Models;
 
 namespace NotesApp.Controller
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class NotesController : ControllerBase
