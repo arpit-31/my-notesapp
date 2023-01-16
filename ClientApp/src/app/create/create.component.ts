@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl ,  FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NoteserviceService } from '../noteservice.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { NoteserviceService } from '../noteservice.service';
   styleUrls: ['./create.component.css']
 })
 export class CreateComponent implements OnInit {
-  constructor(private fb: FormBuilder,private noteserviceService: NoteserviceService,private route: ActivatedRoute) { }
+  constructor(private fb: FormBuilder,private noteserviceService: NoteserviceService,private route: ActivatedRoute,private router: Router) { }
   noteid : any;
   forms : any;
   Isupdate:any;
@@ -36,8 +36,21 @@ export class CreateComponent implements OnInit {
   }
 
    
- onSubmit(){
-console.log(this.notesForm.value)
+ onSubmit(){ 
+  console.log(this.notesForm.value)
+  if (this.Isupdate==false){
+    this.noteserviceService.addnotes(this.notesForm.value).subscribe(result => {
+      console.log(result);
+      this.router.navigate(['home'])
+    }); 
+  }
+  else{
+    this.noteserviceService.editnotes(this.notesForm.value,this.noteid).subscribe(result => {
+      console.log(result);
+      this.router.navigate(['home'])
+    }); 
+  }
+  
  }
   get title(){
     return this.notesForm.get('title')

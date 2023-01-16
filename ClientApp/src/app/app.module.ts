@@ -16,6 +16,9 @@ import { MatCardModule } from '@angular/material/card';
 import {  MatInputModule } from '@angular/material/input';
 import { NoteserviceService } from './noteservice.service';
 import { SearchFilterPipe } from "./filter-search.pipe";
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { SearchFilterPipe } from "./filter-search.pipe";
     MatFormFieldModule,
     ReactiveFormsModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule
+    
   
   
    ],
