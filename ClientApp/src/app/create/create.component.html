@@ -10,7 +10,11 @@
     <div class="title title-required" *ngif="title.touched && !title.valid"></div>
     </div>
     <button class="btn btn-primary">Submit</button>-->
-    
+    <div class="space">
+      <span>Notes App</span>
+      <!-- <a mat-button routerLink="/home">Dashboards</a> -->
+      <!-- <button class="add"style="float:right;"><a routerLink="/create">Add</a></button> -->
+    </div>
 
         
         <form [formGroup]="notesForm" (ngSubmit)="onSubmit()">
@@ -31,7 +35,7 @@
           </div>
         </div>
         <button class= "submit" type="submit" [disabled]="!notesForm.valid">Submit</button>
-        <a [routerLink]="['/home']"> <button class="btn btn-info">Cancel</button></a>
+        <a [routerLink]="['/home']"> <button class="btn btn-info" style="background-color: #F75D59; color:white">Cancel</button></a>
         	
     </form>
         	
