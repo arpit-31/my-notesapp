@@ -35,7 +35,6 @@ h3{
 
 .space {
     text-align: center;
-    float:center;
   background-color:rgb(201, 242, 251);
   border-left: 4px solid;
   border-right: 4px solid;
@@ -92,7 +91,7 @@ h3{
 .add{
  height: 30px;
  width: 60px;
- background-color:rgb(201, 242, 251);;
+ background-color:rgb(201, 242, 251);
 }
 .add:hover{
   background-color: white;
