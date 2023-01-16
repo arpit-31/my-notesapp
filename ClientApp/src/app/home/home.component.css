@@ -31,5 +31,71 @@ h3{
   height:100px;
   width:300px;
   display:inline-block;
+}
+
+.space {
+    float:center;
+  background-color:rgb(201, 242, 251);
+  border-left: 4px solid;
+  border-right: 4px solid;
+  padding: 6px 12px;
+  Font-Size: 1.5rem;
+  font-weight: bold;
+}
+.search{
+  text-align: center;
+  margin-right:15px;
+  padding: 10px;
   
+}
+.searchbox{
+  width: 311px;
+  
+  font-size: 1.2rem;
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2)
+}
+.Notes {
+  Background-Color: #Fff;
+  Box-Shadow: 0 0 10px 4px Rgba(0, 0, 0, 0.1);
+  margin-left: 571px;
+  Height: auto;
+  Width: 311px;
+}
+.NotesText {
+    text-align:center;
+  Outline:none;
+  Font-Family: Inherit;
+  Font-Size: 1.2rem;
+  Border: None;
+  Height: auto;
+  Width: auto;
+  Padding: 20px;
+}
+.Title {
+    background-color:ivory;
+    text-align:center;
+  Font-Family: Inherit;
+  Font-Size: 1.5rem;
+  font-weight:bold;
+  Border:none;
+  Height: auto;
+  Width: auto;
+}
+.action {
+    text-align:center;
+    justify-content:center;
+  Height: auto;
+  Width: auto;
+}
+.add{
+ height: 30px;
+ width: 60px;
+ background-color:white;
+}
+a:link, a:visited {
+  color: black;
+ padding: 2px,1px;
+  text-align: center;
+  text-decoration: none;
+  display:block;
 }

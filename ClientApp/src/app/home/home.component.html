@@ -1,69 +1,59 @@
-<mat-toolbar color="primary" >
-  <span>Notes App</span>
-   <div class="space"></div>
-   <!-- <a mat-button routerLink="/home">Dashboards</a> -->
- </mat-toolbar>
-
+<div class="space">
+    <span>Notes App</span>
+    <!-- <a mat-button routerLink="/home">Dashboards</a> -->
+    <button class="add"style="float:right;"><a routerLink="/create">Add</a></button>
+  </div>
 <section *ngIf="!notes.length">
-    <h3>No Notes Available</h3>
-<button class="btn" ><a routerLink="/create">Create</a></button>
+  <h3>No Notes Available</h3>
+  <button class="btn"><a routerLink="/create">Create</a></button>
 </section>
-
-
-
-
-
+<br>
 <section *ngIf="notes.length">
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-    <span matPrefix> </span>
-    <input type="tel" matInput placeholder="Search" name= "search" [(ngModel)]= "search">
-    
-    </mat-form-field>
-    <br/>
-    <button  (click)="filternotes()">find</button>
-    <button class="add" ><a routerLink="/create">Add</a></button>
-</form>
+     <div class="search">
+        <input class="searchbox" type="tel" placeholder="Search" name="search" [(ngModel)]="search">
+     </div>
+    <!--<button (click)="filternotes()">find</button>-->
+  <br />
+  <br />
 
-<!-- <div *ngFor="let item of notes">
-    <div>Title: {{item.title}}</div>
-    <div>Message: {{item.message}}</div>
-</div> -->
-<ng-container>
-<mat-card class="example-card" *ngFor="let item of notes | searchFilter: search ">
-    <mat-card-header >
-      <mat-card-title>{{item.title}}</mat-card-title>
-      
-    </mat-card-header>
-    <mat-card-content>
-      <p>{{item.message}}</p>
 
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button (click)="getedit(item.id)">Edit</button>
-      <button mat-button mat-button (click)="deletenotes(item.id)">Delete</button>
-    </mat-card-actions> 
-  </mat-card>
-</ng-container>
+  <!-- <div *ngFor="let item of notes">
+      <div>Title: {{item.title}}</div>
+      <div>Message: {{item.message}}</div>
+  </div> -->
+  <ng-container>
+    <mat-card *ngFor="let item of notes | searchFilter: search">
+      <div class="Notes">
+        <div class="Title">
+          <mat-card-header>
+            <mat-card-title>{{item.title}}</mat-card-title>
 
-<!-- <ng-container  *ngIf="search != ''">
-  <mat-card class="example-card" *ngFor="let item of filterednotes">
-      <mat-card-header >
-        <mat-card-title>{{item.title}}</mat-card-title>
-        
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{item.message}}</p>
-        
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button (click)="getedit(item.id)">Edit</button>
-        <button class="btn btn-default" mat-button (click)="deleteemployee(item.id)">Delete</button>
-      </mat-card-actions>
+          </mat-card-header>
+        </div>
+        <div class="NotesText">
+          
+            <p>{{item.message}}</p>
+
+          
+        </div>
+        <div class="action">
+          <mat-card-actions>
+            <button mat-button style="width:70px;" (click)="getedit(item.id)">Edit</button>
+            <button mat-button style="width:70px;"(click)="deletenotes(item.id)">Delete</button>
+          </mat-card-actions>
+        </div>
+      </div>
     </mat-card>
-  </ng-container> -->
-</section>
+
+  </ng-container>
+  <!-- <ng-container  *ngIf="search != ''">
+    <mat-card class="example-card" *ngFor="let item of filterednotes">
+        <mat-card-header >
+          <mat-card-title>{{item.title}}</mat-card-title>
+
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{item.message}}</p>
 
 
 
-    
