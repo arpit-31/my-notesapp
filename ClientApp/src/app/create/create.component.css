@@ -25,12 +25,15 @@ form{
     background-color: #ffc;
 }
 .submit{
+background-color:#ADD8E6 ;
 margin-right: 1rem;
 margin-top: 1rem;
 }
-.submit:hover{
-    background-color:#ADD8E6 ;
+.submit:disabled,
+button[disabled]{
+  background-color: #cccccc;
 }
+
 .space {
     text-align: center;
     float:center;
